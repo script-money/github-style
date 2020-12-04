@@ -7,10 +7,9 @@
                         <h1 class="public css-truncate float-none flex-auto width-fit pl-0">
                             <a class="avatar mr-1" href="{{ absURL "about/" }}">
                                 {{ with $.Site.Params.avatar }}
-
-                                <img src="{{  $.Site.Params.avatar  }}" width="26" height="26">
+                                    <img src="{{  $.Site.Params.avatar  }}" width="26" height="26">
                                 {{ else }}
-                                <img src="{{ "images/avatar.png" | absURL }}" width="26" height="26">
+                                    <img src="{{ "images/avatar.png" | absURL }}" width="26" height="26">
                                 {{ end }}
                             </a>
                             <span class="author"><a href="{{ .Site.BaseURL }}">{{ .Site.Params.author }}</a></span>
@@ -30,10 +29,6 @@
                         </h1>
                     </div>
                 </div>
-
-
-
-
             </div>
             <div class="container-lg clearfix new-discussion-timeline experiment-repo-nav  p-responsive">
                 <div class="repository-content ">
