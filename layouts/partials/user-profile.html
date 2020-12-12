@@ -61,12 +61,23 @@
                             <a rel="nofollow me" href="{{ .Site.BaseURL }}">{{ .Site.BaseURL }}</a>
                             {{ end }}
                         </li>
+
+                        {{ if .Site.Params.wechat}}
+                        <li class="vcard-detail pt-1 css-truncate css-truncate-target">
+                            <svg class="octicon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M14.3347 13.4853C15.3507 12.7487 16 11.66 16 10.4493C16 8.232 13.842 6.434 11.1807 6.434C8.51933 6.434 6.36133 8.232 6.36133 10.4493C6.36133 12.6673 8.51933 14.4653 11.1807 14.4653C11.7307 14.4653 12.2613 14.3873 12.754 14.2453L12.8953 14.224C12.988 14.224 13.072 14.2527 13.1513 14.298L14.2067 14.9073L14.2993 14.9373C14.388 14.9373 14.46 14.8653 14.46 14.7767L14.434 14.6593L14.2167 13.8493L14.2 13.7467C14.2 13.6387 14.2533 13.5433 14.3347 13.4853V13.4853ZM5.78333 2C2.58933 2 0 4.15733 0 6.81933C0 8.27133 0.778667 9.57867 1.998 10.462C2.096 10.5313 2.16 10.646 2.16 10.776L2.14 10.8987L1.87933 11.8707L1.848 12.0113C1.848 12.118 1.93467 12.2047 2.04067 12.2047L2.15267 12.1687L3.41867 11.4373C3.51333 11.3827 3.614 11.3487 3.72533 11.3487L3.89533 11.374C4.486 11.544 5.12333 11.6387 5.78333 11.6387L6.10067 11.6307C5.97533 11.2547 5.90667 10.8587 5.90667 10.45C5.90667 8.02267 8.268 6.05467 11.1807 6.05467L11.4947 6.06267C11.0593 3.76067 8.668 2 5.78333 2V2ZM9.574 9.80733C9.21933 9.80733 8.932 9.51933 8.932 9.16467C8.932 8.80933 9.21933 8.522 9.574 8.522C9.92933 8.522 10.2167 8.80933 10.2167 9.16467C10.2167 9.51933 9.92933 9.80733 9.574 9.80733ZM12.7873 9.80733C12.432 9.80733 12.1447 9.51933 12.1447 9.16467C12.1447 8.80933 12.432 8.522 12.7873 8.522C13.142 8.522 13.4293 8.80933 13.4293 9.16467C13.4293 9.51933 13.142 9.80733 12.7873 9.80733ZM3.85533 6.048C3.42933 6.048 3.08467 5.70267 3.08467 5.27733C3.08467 4.85133 3.42933 4.506 3.85533 4.506C4.28133 4.506 4.62667 4.85133 4.62667 5.27733C4.62667 5.70267 4.28133 6.048 3.85533 6.048ZM7.71067 6.048C7.28467 6.048 6.94 5.70267 6.94 5.27733C6.94 4.85133 7.28467 4.506 7.71067 4.506C8.13667 4.506 8.482 4.85133 8.482 5.27733C8.482 5.70267 8.13667 6.048 7.71067 6.048Z"
+                                    fill="#D8D6D0" />
+                            </svg>
+                            <p>{{ .Site.Params.wechat }}</p>
+                        </li>
+                        {{end}}
                     </ul>
                 </div>
             </div>
 
             <div class="border-top py-3 clearfix hide-sm hide-md">
-                <h2 class="mb-1 h4">Organizations</h2>
+                <h2 class="mb-1 h4">Links</h2>
 
                 {{ if .Site.Params.github}}
                 <a class="avatar-group-item" data-hovercard-type="organization"
@@ -79,32 +90,25 @@
                     </svg>
                 </a>
                 {{ end }}
-                {{ if .Site.Params.misskey}}
+                {{ if .Site.Params.twitter}}
                 <a class="avatar-group-item" data-hovercard-type="organization"
-                    href="{{ .Site.Params.misskey }}">
-                    <img src="{{ "images/misskey.png" | absURL }}" class="avatar" width="35" height="35">
-                </a>
-                {{ end }}
-                {{ if .Site.Params.mastodon}}
-                <a class="avatar-group-item" data-hovercard-type="organization"
-                    href="{{ .Site.Params.mastodon }}">
-                    <img src="{{ "images/mastodon.png" | absURL }}" class="avatar" width="35" height="35">
-                </a>
-                {{ end }}
-                {{ if .Site.Params.facebook}}
-                <a class="avatar-group-item" data-hovercard-type="organization"
-                    href="https://facebook.com/{{ .Site.Params.facebook }}">
-                    <img src="{{ "images/facebook.png" | absURL }}" class="avatar" width="35" height="35">
-                </a>
-                {{ end }}
-                {{ if .Site.Params.Twitter}}
-                <a class="avatar-group-item" data-hovercard-type="organization"
-                    href="https://twitter.com/{{ .Site.Params.Twitter }}">
+                    href="https://twitter.com/{{ .Site.Params.twitter }}">
                     <img src="{{ "images/twitter.png" | absURL }}" class="avatar" width="35" height="35">
                 </a>
                 {{ end }}
+                {{ if .Site.Params.bilibili}}
+                <a class="avatar-group-item" data-hovercard-type="organization" 
+                    href="https://space.bilibili.com/{{ .Site.Params.bilibili }}">
+                    <img src="{{ "images/bilibili.png" | absURL }}" class="avatar" width="35" height="35">
+                </a>
+                {{ end }}
+                {{ if .Site.Params.weibo}}
+                <a class="avatar-group-item" data-hovercard-type="organization"
+                    href="https://weibo.com/u/{{ .Site.Params.weibo }}">
+                    <img src="{{ "images/weibo.png" | absURL }}" class="avatar" width="35" height="35">
+                </a>
+                {{ end }}
             </div>
-
             <div data-test-selector="profile-sponsorships">
             </div>
         </div>
